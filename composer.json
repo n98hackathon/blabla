@@ -1,0 +1,19 @@
+{
+    "name": "n98hackathon/blabla",
+    "description": "N/A",
+    "require": {
+        "php": "~7.1.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "Beer-42"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "N98Hackathon\\BlaBla\\": ""
+        }
+    }
+}
