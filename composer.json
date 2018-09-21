@@ -2,7 +2,8 @@
     "name": "n98hackathon/blabla",
     "description": "N/A",
     "require": {
-        "php": "~7.1.0"
+        "php": "~7.1.0",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "type": "magento2-module",
     "license": [
