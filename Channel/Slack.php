@@ -1,6 +1,6 @@
 <?php
 
-namespace N98Hackathon\BlaBla\Service;
+namespace N98Hackathon\BlaBla\Channel;
 
 use GuzzleHttp\Client;
 use N98Hackathon\BlaBla\Api\ConfigInterface;
