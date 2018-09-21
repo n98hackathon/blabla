@@ -25,7 +25,6 @@ class Slack
      */
     public function __construct(Client $client, ConfigInterface $config)
     {
-
         $this->client = $client;
         $this->config = $config;
     }
@@ -33,13 +32,16 @@ class Slack
     /**
      * @param string $message
      */
-    public function send(string $message) {
+    public function send(string $message)
+    {
         $slackWebhookUrl = $this->config->getSlackWebhookUrl();
         $data = ['text' => $message];
 
         $encodedMessage = json_encode($data);
-        $response = $this->client->post($slackWebhookUrl, [
-            'body' => $encodedMessage
-        ]);
+        $response = $this->client->post(
+            $slackWebhookUrl, [
+            'body' => $encodedMessage,
+        ]
+        );
     }
 }
