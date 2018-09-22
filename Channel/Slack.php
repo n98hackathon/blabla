@@ -34,6 +34,10 @@ class Slack
      */
     public function send(string $message)
     {
+        if (!$this->config->isSlackEnabled()) {
+            return;
+        }
+
         $slackWebhookUrl = $this->config->getSlackWebhookUrl();
         $data = ['text' => $message];
 
