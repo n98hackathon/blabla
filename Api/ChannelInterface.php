@@ -2,6 +2,9 @@
 
 namespace N98Hackathon\BlaBla\Api;
 
+/**
+ * Interface ChannelInterface
+ */
 interface ChannelInterface
 {
     /**

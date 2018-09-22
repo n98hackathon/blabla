@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="n98hackathon_blabla_reports">
+        <job name="n98hackathon_blabla_send_reports" instance="N98Hackathon\BlaBla\Cron\SendReports" method="execute">
+            <schedule>0 0 * * *</schedule>
+        </job>
+    </group>
+</config>
