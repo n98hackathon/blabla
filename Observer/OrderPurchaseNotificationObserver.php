@@ -3,6 +3,7 @@
 namespace N98Hackathon\BlaBla\Observer;
 
 use Magento\Framework\Event\Observer;
+use Magento\Framework\Event\ObserverInterface;
 use Magento\Sales\Api\Data\OrderInterface;
 use N98Hackathon\BlaBla\Api\ChannelPoolInterface;
 use N98Hackathon\BlaBla\Api\ConfigInterface;
@@ -10,7 +11,7 @@ use N98Hackathon\BlaBla\Api\ConfigInterface;
 /**
  * Class OrderPurchaseNotificationObserver
  */
-class OrderPurchaseNotificationObserver
+class OrderPurchaseNotificationObserver implements ObserverInterface
 {
     /**
      * @var ChannelPoolInterface
