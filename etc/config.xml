@@ -6,6 +6,10 @@
                 <is_enabled>1</is_enabled>
                 <webhook_url />
             </slack>
+            <discord>
+                <is_enabled>1</is_enabled>
+                <webhook_url />
+            </discord>
             <events>
                 <customer_creation_enabled>1</customer_creation_enabled>
                 <order_purchase_enabled>1</order_purchase_enabled>

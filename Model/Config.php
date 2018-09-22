@@ -51,6 +51,25 @@ class Config implements ConfigInterface
 
         return $value;
     }
+ /**
+     * @return bool
+     */
+    public function isDiscordEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_DISCORD_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDiscordWebhookUrl()
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_DISCORD_WEBHOOK_URL, ScopeInterface::SCOPE_STORE);
+
+        return $value;
+    }
 
     /**
      * @return bool

@@ -20,17 +20,32 @@
                     </depends>
                 </field>
             </group>
+            <group id="discord" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+                <label>Discord</label>
+                <field id="is_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label" type="select">
+                    <label>Is Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="webhook_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+                    <label>Webhook URL</label>
+                    <validate>required-entry validate-url</validate>
+                    <comment>https://api.slack.com/incoming-webhooks</comment>
+                    <depends>
+                        <field id="n98hackathon_blabla/discord/is_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
             <group id="events" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
                 <label>Events</label>
-                <field id="customer_creation_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                <field id="customer_creation_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label" type="select">
                     <label>Enable customer creation notifications</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="order_purchase_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                <field id="order_purchase_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" translate="label" type="select">
                     <label>Enable order purchase notifications</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="zero_search_results_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                <field id="zero_search_results_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" translate="label" type="select">
                     <label>Enable zero search results notifications</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>

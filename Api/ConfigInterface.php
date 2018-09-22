@@ -20,6 +20,16 @@ interface ConfigInterface
     const XPATH_SLACK_WEBHOOK_URL = 'n98hackathon_blabla/slack/webhook_url';
 
     /**
+     * Enable / disable slack push notifications
+     */
+    const XPATH_DISCORD_ENABLED = 'n98hackathon_blabla/discord/is_enabled';
+
+    /**
+     * Webhook for sending slack messages to
+     */
+    const XPATH_DISCORD_WEBHOOK_URL = 'n98hackathon_blabla/discord/webhook_url';
+
+    /**
      * Enable / disable order purchase event push notifications
      */
     const XPATH_ORDER_PURCHASE_ENABLED = 'n98hackathon_blabla/events/order_purchase_enabled';
@@ -43,6 +53,16 @@ interface ConfigInterface
      * @return null|string
      */
     public function getSlackWebhookUrl();
+
+    /**
+     * @return bool
+     */
+    public function isDiscordEnabled(): bool;
+
+    /**
+     * @return null|string
+     */
+    public function getDiscordWebhookUrl();
 
     /**
      * @return bool
