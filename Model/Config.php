@@ -71,4 +71,14 @@ class Config implements ConfigInterface
 
         return (bool)$value;
     }
+
+    /**
+     * @return bool
+     */
+    public function isZeroSearchResultsEventEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_ZERO_SEARCH_RESULTS_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
 }

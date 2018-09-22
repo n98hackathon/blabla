@@ -30,6 +30,11 @@ interface ConfigInterface
     const XPATH_CUSTOMER_CREATION_ENABLED = 'n98hackathon/events/customer_creation_enabled';
 
     /**
+     * Enable / disable zero search results event push notifications
+     */
+    const XPATH_ZERO_SEARCH_RESULTS_ENABLED = 'n98hackathon/events/zero_search_results_enabled';
+
+    /**
      * @return bool
      */
     public function isSlackEnabled(): bool;
@@ -48,4 +53,9 @@ interface ConfigInterface
      * @return bool
      */
     public function isOrderPurchaseEventEnabled(): bool;
+
+    /**
+     * @return bool
+     */
+    public function isZeroSearchResultsEventEnabled(): bool;
 }

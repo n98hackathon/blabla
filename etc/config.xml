@@ -9,6 +9,7 @@
             <events>
                 <customer_creation_enabled>1</customer_creation_enabled>
                 <order_purchase_enabled>1</order_purchase_enabled>
+                <zero_search_results_enabled>1</zero_search_results_enabled>
             </events>
         </n98hackathon_blabla>
     </default>
