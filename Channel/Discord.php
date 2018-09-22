@@ -39,11 +39,14 @@ class Discord
         }
 
         $discordWebhookUrl = $this->config->getDiscordWebhookUrl();
-        $data = ['text' => $message];
+        $data = ['content' => $message];
 
         $encodedMessage = json_encode($data);
         $response = $this->client->post(
             $discordWebhookUrl, [
+                'headers' => [
+                    'Content-Type' => 'application/json'
+                ],
                 'body' => $encodedMessage,
             ]
         );
