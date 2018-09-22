@@ -12,7 +12,7 @@
 
     <type name="N98Hackathon\BlaBla\Channel\ChannelPool">
         <arguments>
-            <argument name="exporters" xsi:type="array">
+            <argument name="channels" xsi:type="array">
                 <item name="slack" sortOrder="10" xsi:type="object">N98Hackathon\BlaBla\Channel\Slack</item>
             </argument>
         </arguments>

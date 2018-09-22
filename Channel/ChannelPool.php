@@ -18,9 +18,9 @@ class ChannelPool implements ChannelPoolInterface
     /**
      * Pool constructor.
      *
-     * @param ChannelInterface $channels
+     * @param ChannelInterface[] $channels
      */
-    public function __construct(ChannelInterface $channels)
+    public function __construct($channels)
     {
         $this->channels = $channels;
     }
