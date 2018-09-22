@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="N98Hackathon_BlaBla::config_n98hackathon_blabla" title="n98hackation_blabla"/>
+                            <resource id="N98Hackathon_BlaBla::config_n98hackathon_blabla" title="n98hackation_blabla" />
                         </resource>
                     </resource>
                 </resource>

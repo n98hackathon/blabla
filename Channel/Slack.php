@@ -45,7 +45,7 @@ class Slack
         $response = $this->client->post(
             $slackWebhookUrl, [
                 'headers' => [
-                    'Content-Type' => 'application/json'
+                    'Content-Type' => 'application/json',
                 ],
                 'body' => $encodedMessage,
             ]

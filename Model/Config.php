@@ -51,7 +51,8 @@ class Config implements ConfigInterface
 
         return $value;
     }
- /**
+
+    /**
      * @return bool
      */
     public function isDiscordEnabled(): bool
@@ -71,7 +72,7 @@ class Config implements ConfigInterface
         return $value;
     }
 
- /**
+    /**
      * @return bool
      */
     public function isHipchatEnabled(): bool

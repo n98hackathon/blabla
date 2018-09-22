@@ -41,14 +41,14 @@ class Hipchat
         $hipchatIntegrationUrl = $this->config->getHipchatIntegrationUrl();
         $data = [
             'message-format' => 'text',
-            'message' => $message
+            'message' => $message,
         ];
 
         $encodedMessage = json_encode($data);
         $response = $this->client->post(
             $hipchatIntegrationUrl, [
                 'headers' => [
-                    'Content-Type' => 'application/json'
+                    'Content-Type' => 'application/json',
                 ],
                 'body' => $encodedMessage,
             ]
