@@ -5,7 +5,7 @@ namespace N98Hackathon\BlaBla\Channel;
 use GuzzleHttp\Client;
 use N98Hackathon\BlaBla\Api\ConfigInterface;
 
-class Slack
+class Hipchat
 {
     /**
      * @var Client
@@ -34,21 +34,24 @@ class Slack
      */
     public function send(string $message)
     {
-//        if (!$this->config->isSlackEnabled()) {
-//            return;
-//        }
-//
-//        $slackWebhookUrl = $this->config->getSlackWebhookUrl();
-//        $data = ['text' => $message];
-//
-//        $encodedMessage = json_encode($data);
-//        $response = $this->client->post(
-//            $slackWebhookUrl, [
-//                'headers' => [
-//                    'Content-Type' => 'application/json'
-//                ],
-//                'body' => $encodedMessage,
-//            ]
-//        );
+        if (!$this->config->isHipchatEnabled()) {
+            return;
+        }
+
+        $hipchatIntegrationUrl = $this->config->getHipchatIntegrationUrl();
+        $data = [
+            'message-format' => 'text',
+            'message' => $message
+        ];
+
+        $encodedMessage = json_encode($data);
+        $response = $this->client->post(
+            $hipchatIntegrationUrl, [
+                'headers' => [
+                    'Content-Type' => 'application/json'
+                ],
+                'body' => $encodedMessage,
+            ]
+        );
     }
 }

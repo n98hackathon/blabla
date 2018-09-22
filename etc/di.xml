@@ -15,6 +15,7 @@
             <argument name="channels" xsi:type="array">
                 <item name="slack" sortOrder="10" xsi:type="object">N98Hackathon\BlaBla\Channel\Slack</item>
                 <item name="discord" sortOrder="20" xsi:type="object">N98Hackathon\BlaBla\Channel\Discord</item>
+                <item name="hipchat" sortOrder="30" xsi:type="object">N98Hackathon\BlaBla\Channel\Hipchat</item>
             </argument>
         </arguments>
     </type>

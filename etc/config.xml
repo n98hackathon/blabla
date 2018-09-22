@@ -10,6 +10,10 @@
                 <is_enabled>1</is_enabled>
                 <webhook_url />
             </discord>
+            <hipchat>
+                <is_enabled>1</is_enabled>
+                <integration_url />
+            </hipchat>
             <events>
                 <customer_creation_enabled>1</customer_creation_enabled>
                 <order_purchase_enabled>1</order_purchase_enabled>

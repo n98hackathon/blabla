@@ -34,21 +34,21 @@ class Discord
      */
     public function send(string $message)
     {
-        if (!$this->config->isDiscordEnabled()) {
-            return;
-        }
-
-        $discordWebhookUrl = $this->config->getDiscordWebhookUrl();
-        $data = ['content' => $message];
-
-        $encodedMessage = json_encode($data);
-        $response = $this->client->post(
-            $discordWebhookUrl, [
-                'headers' => [
-                    'Content-Type' => 'application/json'
-                ],
-                'body' => $encodedMessage,
-            ]
-        );
+//        if (!$this->config->isDiscordEnabled()) {
+//            return;
+//        }
+//
+//        $discordWebhookUrl = $this->config->getDiscordWebhookUrl();
+//        $data = ['content' => $message];
+//
+//        $encodedMessage = json_encode($data);
+//        $response = $this->client->post(
+//            $discordWebhookUrl, [
+//                'headers' => [
+//                    'Content-Type' => 'application/json'
+//                ],
+//                'body' => $encodedMessage,
+//            ]
+//        );
     }
 }

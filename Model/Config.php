@@ -71,6 +71,26 @@ class Config implements ConfigInterface
         return $value;
     }
 
+ /**
+     * @return bool
+     */
+    public function isHipchatEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_HIPCHAT_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getHipchatIntegrationUrl()
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_HIPCHAT_INTEGRATION_URL, ScopeInterface::SCOPE_STORE);
+
+        return $value;
+    }
+
     /**
      * @return bool
      */
