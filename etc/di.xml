@@ -8,4 +8,14 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <preference for="N98Hackathon\BlaBla\Api\ConfigInterface" type="N98Hackathon\BlaBla\Model\Config" />
+    <preference for="N98Hackathon\BlaBla\Api\ChannelPoolInterface" type="N98Hackathon\BlaBla\Channel\ChannelPool" />
+
+    <type name="N98Hackathon\BlaBla\Channel\ChannelPool">
+        <arguments>
+            <argument name="exporters" xsi:type="array">
+                <item name="slack" sortOrder="10" xsi:type="object">N98Hackathon\BlaBla\Channel\Slack</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>

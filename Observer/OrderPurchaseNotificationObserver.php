@@ -4,7 +4,7 @@ namespace N98Hackathon\BlaBla\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Sales\Api\Data\OrderInterface;
-use N98Hackathon\BlaBla\Channel\Slack;
+use N98Hackathon\BlaBla\Channel\ChannelPool;
 
 /**
  * Class OrderPurchaseNotificationObserver
@@ -12,18 +12,18 @@ use N98Hackathon\BlaBla\Channel\Slack;
 class OrderPurchaseNotificationObserver
 {
     /**
-     * @var Slack
+     * @var ChannelPool
      */
-    protected $slack;
+    protected $channelPool;
 
     /**
      * OrderPurchaseNotificationObserver constructor.
      *
-     * @param Slack $slack
+     * @param ChannelPool $channelPool
      */
-    public function __construct(Slack $slack)
+    public function __construct(ChannelPool $channelPool)
     {
-        $this->slack = $slack;
+        $this->channelPool = $channelPool;
     }
 
     /**
@@ -39,6 +39,10 @@ class OrderPurchaseNotificationObserver
         $order = $observer->getData('order');
         $total = $order->getGrandTotal();
 
-        $this->slack->send('New order placed: ' . $total);
+        $channels = $this->channelPool->getChannels();
+
+        foreach ($channels as $channel) {
+            $channel->send('New order placed: ' . $total);
+        }
     }
 }

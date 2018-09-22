@@ -4,7 +4,7 @@ namespace N98Hackathon\BlaBla\Observer;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\Event\Observer;
-use N98Hackathon\BlaBla\Channel\Slack;
+use N98Hackathon\BlaBla\Channel\ChannelPool;
 
 /**
  * Class CustomerCreateNotificationObserver
@@ -12,18 +12,18 @@ use N98Hackathon\BlaBla\Channel\Slack;
 class CustomerCreateNotificationObserver
 {
     /**
-     * @var Slack
+     * @var ChannelPool
      */
-    protected $slack;
+    protected $channelPool;
 
     /**
      * CustomerCreateNotificationObserver constructor.
      *
-     * @param Slack $slack
+     * @param ChannelPool $channelPool
      */
-    public function __construct(Slack $slack)
+    public function __construct(ChannelPool $channelPool)
     {
-        $this->slack = $slack;
+        $this->channelPool = $channelPool;
     }
 
     /**
@@ -39,6 +39,10 @@ class CustomerCreateNotificationObserver
         $customer = $observer->getData('customer');
         $customerMail = $customer->getEmail();
 
-        $this->slack->send('Created new customer ' . $customerMail);
+        $channels = $this->channelPool->getChannels();
+
+        foreach ($channels as $channel) {
+            $channel->send('Created new customer ' . $customerMail);
+        }
     }
 }

@@ -40,8 +40,8 @@ class Slack
         $encodedMessage = json_encode($data);
         $response = $this->client->post(
             $slackWebhookUrl, [
-            'body' => $encodedMessage,
-        ]
+                'body' => $encodedMessage,
+            ]
         );
     }
 }
