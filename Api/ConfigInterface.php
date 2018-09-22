@@ -55,6 +55,11 @@ interface ConfigInterface
     const XPATH_ZERO_SEARCH_RESULTS_ENABLED = 'n98hackathon_blabla/events/zero_search_results_enabled';
 
     /**
+     * Enable / disable contact us event push notifications
+     */
+    const XPATH_CONTACT_US_ENABLED = 'n98hackathon_blabla/events/contact_us_enabled';
+
+    /**
      * @return bool
      */
     public function isSlackEnabled(): bool;
@@ -98,4 +103,9 @@ interface ConfigInterface
      * @return bool
      */
     public function isZeroSearchResultsEventEnabled(): bool;
+
+    /**
+     * @return bool
+     */
+    public function isContactUsEventEnabled(): bool;
 }

@@ -18,6 +18,7 @@
                 <customer_creation_enabled>1</customer_creation_enabled>
                 <order_purchase_enabled>1</order_purchase_enabled>
                 <zero_search_results_enabled>1</zero_search_results_enabled>
+                <contact_us_enabled>1</contact_us_enabled>
             </events>
         </n98hackathon_blabla>
     </default>

@@ -7,4 +7,7 @@
     <event name="customer_register_success">
         <observer name="customer_create_notification_submit" instance="N98Hackathon\BlaBla\Observer\CustomerCreateNotificationObserver" />
     </event>
+    <event name="controller_action_postdispatch_contact_index_post">
+        <observer name="contact_us_notification_submit" instance="N98Hackathon\BlaBla\Observer\ContactUsNotificationObserver" />
+    </event>
 </config>

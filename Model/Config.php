@@ -121,4 +121,14 @@ class Config implements ConfigInterface
 
         return (bool)$value;
     }
+
+    /**
+     * @return bool
+     */
+    public function isContactUsEventEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_CONTACT_US_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
 }

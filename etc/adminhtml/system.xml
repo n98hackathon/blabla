@@ -36,7 +36,7 @@
                 </field>
             </group>
             <group id="hipchat" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label">
-                <label>Discord</label>
+                <label>HipChat</label>
                 <field id="is_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label" type="select">
                     <label>Is Enabled?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -62,6 +62,10 @@
                 </field>
                 <field id="zero_search_results_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" translate="label" type="select">
                     <label>Enable zero search results notifications</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="contact_us_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40" translate="label" type="select">
+                    <label>Enable Contact Us notifications</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
