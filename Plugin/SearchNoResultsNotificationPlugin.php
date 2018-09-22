@@ -4,7 +4,7 @@ namespace N98Hackathon\BlaBla\Observer;
 
 use Magento\Catalog\Model\Layer;
 use Magento\Catalog\Model\ResourceModel\Product\Collection;
-use N98Hackathon\BlaBla\Channel\ChannelPool;
+use N98Hackathon\BlaBla\Api\ChannelPoolInterface;
 
 /**
  * Class SearchNoResultsNotificationPlugin
@@ -12,16 +12,16 @@ use N98Hackathon\BlaBla\Channel\ChannelPool;
 class SearchNoResultsNotificationPlugin
 {
     /**
-     * @var ChannelPool
+     * @var ChannelPoolInterface
      */
     protected $channelPool;
 
     /**
      * SearchNoResultsNotificationPlugin constructor.
      *
-     * @param ChannelPool $channelPool
+     * @param ChannelPoolInterface $channelPool
      */
-    public function __construct(ChannelPool $channelPool)
+    public function __construct(ChannelPoolInterface $channelPool)
     {
         $this->channelPool = $channelPool;
     }
@@ -29,7 +29,7 @@ class SearchNoResultsNotificationPlugin
     /**
      * Submit notification when catalog search returns no results
      *
-     * @param Layer $subject
+     * @param Layer      $subject
      * @param Collection $productCollection
      *
      * @return Collection

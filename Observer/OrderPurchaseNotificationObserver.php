@@ -4,6 +4,7 @@ namespace N98Hackathon\BlaBla\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Sales\Api\Data\OrderInterface;
+use N98Hackathon\BlaBla\Api\ChannelPoolInterface;
 use N98Hackathon\BlaBla\Channel\ChannelPool;
 
 /**
@@ -12,16 +13,16 @@ use N98Hackathon\BlaBla\Channel\ChannelPool;
 class OrderPurchaseNotificationObserver
 {
     /**
-     * @var ChannelPool
+     * @var ChannelPoolInterface
      */
     protected $channelPool;
 
     /**
      * OrderPurchaseNotificationObserver constructor.
      *
-     * @param ChannelPool $channelPool
+     * @param ChannelPoolInterface $channelPool
      */
-    public function __construct(ChannelPool $channelPool)
+    public function __construct(ChannelPoolInterface $channelPool)
     {
         $this->channelPool = $channelPool;
     }
