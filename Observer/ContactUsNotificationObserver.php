@@ -47,10 +47,16 @@ class ContactUsNotificationObserver implements ObserverInterface
             return;
         }
 
+        $event = $observer->getEvent();
+        $request = $event->getRequest();
+        $params = $request->getParams();
+        $name = $params['name'];
+        $email = $params['email'];
+        $message = sprintf('You received new message from %s (%s). Please check your email.', $name, $email);
         $channels = $this->channelPool->getChannels();
 
         foreach ($channels as $channel) {
-            $channel->send('You received new message from customer. Please check your email.');
+            $channel->send($message);
         }
     }
 }
