@@ -29,6 +29,11 @@ class SearchNoResultsNotificationPlugin
     protected $config;
 
     /**
+     * @var bool
+     */
+    protected $isNotificationSent = false;
+
+    /**
      * SearchNoResultsNotificationPlugin constructor.
      *
      * @param ChannelPoolInterface $channelPool
@@ -59,6 +64,10 @@ class SearchNoResultsNotificationPlugin
             return $productCollection;
         }
 
+        if ($this->isNotificationSent) {
+            return $productCollection;
+        }
+
         $itemsCount = $productCollection->count();
 
         if (!$itemsCount) {
@@ -68,6 +77,8 @@ class SearchNoResultsNotificationPlugin
             foreach ($channels as $channel) {
                 $channel->send(sprintf('The search returned no results. The query was: "%s".', $queryText));
             }
+
+            $this->isNotificationSent = true;
         }
 
         return $productCollection;
