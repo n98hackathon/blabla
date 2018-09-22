@@ -1,20 +1,33 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="n98hackation_blabla" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+        <section id="n98hackathon_blabla" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
             <label>Blabla Notifications n98 Hackathon</label>
             <tab>service</tab>
             <resource>N98Hackathon_BlaBla::config_n98hackathon_blabla</resource>
             <group id="slack" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
                 <label>Slack</label>
+                <field id="is_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                    <label>Is Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <field id="webhook_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
                     <label>Webhook URL</label>
                     <validate>required-entry validate-url</validate>
                     <comment>https://api.slack.com/incoming-webhooks</comment>
+                    <depends>
+                        <field id="n98hackathon_blabla/slack/is_enabled">1</field>
+                    </depends>
                 </field>
-
-                <field id="is_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
-                    <label>Is Enabled?</label>
+            </group>
+            <group id="events" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+                <label>Events</label>
+                <field id="customer_creation_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                    <label>Enable customer creation notifications</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="order_purchase_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1" translate="label" type="select">
+                    <label>Enable order purchase notifications</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>

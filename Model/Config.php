@@ -33,6 +33,16 @@ class Config implements ConfigInterface
     }
 
     /**
+     * @return bool
+     */
+    public function isSlackEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_SLACK_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
+
+    /**
      * @return null|string
      */
     public function getSlackWebhookUrl()
@@ -45,9 +55,19 @@ class Config implements ConfigInterface
     /**
      * @return bool
      */
-    public function isSlackEnabled()
+    public function isCustomerCreationEventEnabled(): bool
     {
-        $value = $this->scopeConfig->getValue(self::XPATH_SLACK_ENABLED, ScopeInterface::SCOPE_STORE);
+        $value = $this->scopeConfig->getValue(self::XPATH_CUSTOMER_CREATION_ENABLED, ScopeInterface::SCOPE_STORE);
+
+        return (bool)$value;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOrderPurchaseEventEnabled(): bool
+    {
+        $value = $this->scopeConfig->getValue(self::XPATH_ORDER_PURCHASE_ENABLED, ScopeInterface::SCOPE_STORE);
 
         return (bool)$value;
     }

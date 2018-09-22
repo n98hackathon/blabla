@@ -1,21 +1,15 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <events>
-            <order_purchase>
-                <is_enabled/>
-            </order_purchase>
-
-            <customer_creation>
-                <is_enabled/>
-            </customer_creation>
-        </events>
-
-        <channels>
+        <n98hackathon_blabla>
             <slack>
-                <is_enabled/>
+                <is_enabled>1</is_enabled>
                 <webhook_url />
             </slack>
-        </channels>
+            <events>
+                <customer_creation_enabled>1</customer_creation_enabled>
+                <order_purchase_enabled>1</order_purchase_enabled>
+            </events>
+        </n98hackathon_blabla>
     </default>
 </config>

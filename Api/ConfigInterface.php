@@ -10,14 +10,29 @@ namespace N98Hackathon\BlaBla\Api;
 interface ConfigInterface
 {
     /**
+     * Enable / disable slack push notifications
+     */
+    const XPATH_SLACK_ENABLED = 'n98hackathon/slack/is_enabled';
+
+    /**
      * Webhook for sending slack messages to
      */
     const XPATH_SLACK_WEBHOOK_URL = 'n98hackathon/slack/webhook_url';
 
     /**
-     * Enable / disable slack push notifications
+     * Enable / disable order purchase event push notifications
      */
-    const XPATH_SLACK_ENABLED = 'n98hackathon/slack/is_enabled';
+    const XPATH_ORDER_PURCHASE_ENABLED = 'n98hackathon/events/order_purchase_enabled';
+
+    /**
+     * Enable / disable customer creation event push notifications
+     */
+    const XPATH_CUSTOMER_CREATION_ENABLED = 'n98hackathon/events/customer_creation_enabled';
+
+    /**
+     * @return bool
+     */
+    public function isSlackEnabled(): bool;
 
     /**
      * @return null|string
@@ -25,7 +40,12 @@ interface ConfigInterface
     public function getSlackWebhookUrl();
 
     /**
-     * @return null|bool
+     * @return bool
      */
-    public function isSlackEnabled();
+    public function isCustomerCreationEventEnabled(): bool;
+
+    /**
+     * @return bool
+     */
+    public function isOrderPurchaseEventEnabled(): bool;
 }
