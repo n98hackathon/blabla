@@ -34,21 +34,21 @@ class Slack
      */
     public function send(string $message)
     {
-//        if (!$this->config->isSlackEnabled()) {
-//            return;
-//        }
-//
-//        $slackWebhookUrl = $this->config->getSlackWebhookUrl();
-//        $data = ['text' => $message];
-//
-//        $encodedMessage = json_encode($data);
-//        $response = $this->client->post(
-//            $slackWebhookUrl, [
-//                'headers' => [
-//                    'Content-Type' => 'application/json'
-//                ],
-//                'body' => $encodedMessage,
-//            ]
-//        );
+        if (!$this->config->isSlackEnabled()) {
+            return;
+        }
+
+        $slackWebhookUrl = $this->config->getSlackWebhookUrl();
+        $data = ['text' => $message];
+
+        $encodedMessage = json_encode($data);
+        $response = $this->client->post(
+            $slackWebhookUrl, [
+                'headers' => [
+                    'Content-Type' => 'application/json'
+                ],
+                'body' => $encodedMessage,
+            ]
+        );
     }
 }
