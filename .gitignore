@@ -1,7 +1,3 @@
-#--------------------------#
-# Magento Default Files    #
-#--------------------------#
-
 /app/etc/local.xml
 
 /media/*
@@ -41,3 +37,7 @@
 /var/package/*
 !/var/package/*.xml
 
+vendor
+composer.lock
+.DS_Store
+.idea

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <n98hackathon_blabla>
+            <slack>
+                <is_enabled>1</is_enabled>
+                <webhook_url />
+            </slack>
+            <discord>
+                <is_enabled>1</is_enabled>
+                <webhook_url />
+            </discord>
+            <hipchat>
+                <is_enabled>1</is_enabled>
+                <integration_url />
+            </hipchat>
+            <events>
+                <customer_creation_enabled>1</customer_creation_enabled>
+                <order_purchase_enabled>1</order_purchase_enabled>
+                <zero_search_results_enabled>1</zero_search_results_enabled>
+                <contact_us_enabled>1</contact_us_enabled>
+            </events>
+        </n98hackathon_blabla>
+    </default>
+</config>

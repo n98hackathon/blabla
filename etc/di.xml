@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="N98Hackathon\BlaBla\Api\ConfigInterface" type="N98Hackathon\BlaBla\Model\Config" />
+    <preference for="N98Hackathon\BlaBla\Api\ChannelPoolInterface" type="N98Hackathon\BlaBla\Channel\ChannelPool" />
+    <preference for="N98Hackathon\BlaBla\Api\ReportServicePoolInterface" type="N98Hackathon\BlaBla\Reports\ReportServicePool" />
+
+    <type name="N98Hackathon\BlaBla\Channel\ChannelPool">
+        <arguments>
+            <argument name="channels" xsi:type="array">
+                <item name="slack" sortOrder="10" xsi:type="object">N98Hackathon\BlaBla\Channel\Slack</item>
+                <item name="discord" sortOrder="20" xsi:type="object">N98Hackathon\BlaBla\Channel\Discord</item>
+                <item name="hipchat" sortOrder="30" xsi:type="object">N98Hackathon\BlaBla\Channel\Hipchat</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="N98Hackathon\BlaBla\Reports\ReportServicePool">
+        <arguments>
+            <argument name="reportServices" xsi:type="array">
+                <item name="slack" sortOrder="10" xsi:type="object">N98Hackathon\BlaBla\Reports\NewAccountsYesterdayReportService</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
