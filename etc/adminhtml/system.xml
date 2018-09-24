@@ -14,7 +14,7 @@
                 <field id="webhook_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
                     <label>Webhook URL</label>
                     <validate>required-entry validate-url</validate>
-                    <comment>https://api.slack.com/incoming-webhooks</comment>
+                    <comment>To generate a Webhook follow the introduction here: https://api.slack.com/incoming-webhooks</comment>
                     <depends>
                         <field id="n98hackathon_blabla/slack/is_enabled">1</field>
                     </depends>
@@ -29,7 +29,7 @@
                 <field id="webhook_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
                     <label>Webhook URL</label>
                     <validate>required-entry validate-url</validate>
-                    <comment>https://discordapp.com/developers/docs/resources/webhook#execute-webhook</comment>
+                    <comment>To generate a Webhook follow the introduction here: https://discordapp.com/developers/docs/resources/webhook#execute-webhook</comment>
                     <depends>
                         <field id="n98hackathon_blabla/discord/is_enabled">1</field>
                     </depends>
@@ -44,7 +44,7 @@
                 <field id="integration_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
                     <label>Room Integration URL</label>
                     <validate>required-entry validate-url</validate>
-                    <comment>https://confluence.atlassian.com/hc/integrations-with-hipchat-server-683508267.html</comment>
+                    <comment>To generate a Room Integration URL follow the introduction here: https://confluence.atlassian.com/hc/integrations-with-hipchat-server-683508267.html</comment>
                     <depends>
                         <field id="n98hackathon_blabla/hipchat/is_enabled">1</field>
                     </depends>
@@ -53,19 +53,21 @@
             <group id="events" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
                 <label>Events</label>
                 <field id="customer_creation_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label" type="select">
-                    <label>Enable customer creation notifications</label>
+                    <label>Receive notifications for new Customer Accounts.</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="order_purchase_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="20" translate="label" type="select">
-                    <label>Enable order purchase notifications</label>
+                    <label>Receive notifications for new Orders.</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="zero_search_results_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30" translate="label" type="select">
-                    <label>Enable zero search results notifications</label>
+                    <label>Receive new notifications for searches with no result.</label>
+                    <comment>If there are search terms with no results, you will receive a notification.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="contact_us_enabled" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="40" translate="label" type="select">
                     <label>Enable Contact Us notifications</label>
+                    <comment>You will receive a notification as soon as somebody fills out the contact form.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
