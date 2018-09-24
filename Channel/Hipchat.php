@@ -45,7 +45,7 @@ class Hipchat
         ];
 
         $encodedMessage = json_encode($data);
-        $response = $this->client->post(
+        $this->client->post(
             $hipchatIntegrationUrl, [
                 'headers' => [
                     'Content-Type' => 'application/json',
