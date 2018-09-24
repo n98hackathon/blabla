@@ -3,15 +3,15 @@
     <default>
         <n98hackathon_blabla>
             <slack>
-                <is_enabled>1</is_enabled>
+                <is_enabled>0</is_enabled>
                 <webhook_url />
             </slack>
             <discord>
-                <is_enabled>1</is_enabled>
+                <is_enabled>0</is_enabled>
                 <webhook_url />
             </discord>
             <hipchat>
-                <is_enabled>1</is_enabled>
+                <is_enabled>0</is_enabled>
                 <integration_url />
             </hipchat>
             <events>
